@@ -1,5 +1,5 @@
 //uc-6
-//Variables
+//Constants
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
 const PART_TIME_HOUR = 4;
@@ -8,7 +8,7 @@ const WAGE_PER_HOUR = 20;
 
 const NUM_OF_WORKING_DAYS = 20;
 const MAX_HRS_IN_MONTH = 160;
-
+//Variables
 let empHrs = 0;  
 let totalEmpHrs = 0;
 let totalWorkingDays = 0;
