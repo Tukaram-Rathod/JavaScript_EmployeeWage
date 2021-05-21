@@ -1,4 +1,4 @@
-//uc-9
+//uc-10
 //Constants
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
@@ -15,6 +15,7 @@ let totalWorkingDays = 0;
 let empDailyWageArr = new Array();
 let empDailyWageMap = new Map();
 let empDailyHrsMap = new Map();
+let empDailyHrsAndWageArr = new Array();
 
 function calcDailyWage(empHrs){
     return empHrs * WAGE_PER_HOUR;
@@ -29,7 +30,20 @@ while ( totalEmpHrs < MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS
     empDailyWageArr.push(calcDailyWage(empHrs));
     empDailyHrsMap.set(totalWorkingDays , empHrs);
     empDailyWageMap.set(totalWorkingDays, calcDailyWage(empHrs));
+
+    //uc-10
+    empDailyHrsAndWageArr.push({
+        dayNum:totalWorkingDays,
+        dailyHours:empHrs,
+        dailyWage:calcDailyWage(empHrs),
+        toString(){
+            return '\n Day ' + this.dayNum + ' => Working Hour is ' + this.dailyHours +
+                                    'And Wage Earned = ' + this.dailyWage
+        },
+    });
 }   
+console.log("Uc 10 showing Daily Hours Worked and Wage Earned :"+empDailyHrsAndWageArr);
+
 //Function For Getting Working Hours
 function getWorkingHours(empCheck){
     switch (empCheck){
